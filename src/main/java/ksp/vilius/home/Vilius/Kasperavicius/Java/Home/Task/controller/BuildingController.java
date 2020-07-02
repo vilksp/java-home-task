@@ -33,7 +33,7 @@ public class BuildingController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deleteBulding(Building building) {
+    public ResponseEntity<Void> deleteBulding(@RequestParam Building building) {
 
         buildingService.deleteBuilding(building);
 

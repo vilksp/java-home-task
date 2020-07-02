@@ -5,21 +5,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "building")
 public class Building extends BaseEntity {
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "adress_id", referencedColumnName = "id")
     private Address address;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "owner_id", referencedColumnName = "id")
     private Owner owner;
 
     private double size;
