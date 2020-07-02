@@ -1,9 +1,12 @@
-package model;
+package ksp.vilius.home.Vilius.Kasperavicius.Java.Home.Task.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.CascadeType;
+import javax.persistence.OneToOne;
 
 @Getter
 @Setter
@@ -11,8 +14,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Building extends BaseEntity {
 
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Address address;
 
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Owner owner;
 
     private double size;
