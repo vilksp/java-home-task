@@ -3,10 +3,12 @@ package ksp.vilius.home.Vilius.Kasperavicius.Java.Home.Task.service.DataJpa;
 import ksp.vilius.home.Vilius.Kasperavicius.Java.Home.Task.model.Building;
 import ksp.vilius.home.Vilius.Kasperavicius.Java.Home.Task.repositories.BuildingRepository;
 import ksp.vilius.home.Vilius.Kasperavicius.Java.Home.Task.service.BuildingService;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class BuildingServiceJpa implements BuildingService {
 
     private final BuildingRepository buildingRepository;
