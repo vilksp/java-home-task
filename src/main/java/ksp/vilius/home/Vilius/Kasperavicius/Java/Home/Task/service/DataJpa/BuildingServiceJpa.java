@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BuildingServiceJpa implements BuildingService {
@@ -31,8 +32,11 @@ public class BuildingServiceJpa implements BuildingService {
     }
 
     @Override
-    public void deleteBuilding(Building deleteBuilding) {
-        buildingRepository.delete(deleteBuilding);
+    public Building getBuildingById(Long id) {
+        Optional<Building> buildingById = buildingRepository
+                .findById(id);
+
+        return buildingById.orElseThrow(()->new RuntimeException("There's no building with such id!"));
     }
 
     @Override

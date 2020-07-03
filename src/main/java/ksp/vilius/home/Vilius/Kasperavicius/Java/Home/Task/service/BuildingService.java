@@ -3,14 +3,15 @@ package ksp.vilius.home.Vilius.Kasperavicius.Java.Home.Task.service;
 import ksp.vilius.home.Vilius.Kasperavicius.Java.Home.Task.model.Building;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface BuildingService {
 
     List<Building> getAllBuildings();
 
-    Building createBuilding(Building createBuilding);
+    Building getBuildingById(Long id);
 
-    void deleteBuilding(Building deleteBuilding);
+    Building createBuilding(Building createBuilding);
 
     void deleteBuildingById(Long buildingId);
 

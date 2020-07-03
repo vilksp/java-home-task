@@ -25,6 +25,14 @@ public class BuildingController {
         return new ResponseEntity<List<Building>>(buildingService.getAllBuildings(), HttpStatus.OK);
     }
 
+    @GetMapping("{id}")
+    public ResponseEntity<Building> getBuildingById(@PathVariable Long id) {
+
+
+        return new ResponseEntity<Building>(buildingService.getBuildingById(id), HttpStatus.OK);
+    }
+
+
     @PostMapping("{id}")
     public ResponseEntity<Building> createBuilding(@PathVariable Long id, @RequestBody Building building) {
 
@@ -32,23 +40,16 @@ public class BuildingController {
         return new ResponseEntity<>(building, HttpStatus.OK);
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> deleteBuilding(@RequestBody Building building) {
-
-        buildingService.deleteBuilding(building);
-
-        return new ResponseEntity<Void>(HttpStatus.OK);
-    }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteBuildingById(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteBuilding(@PathVariable Long id) {
 
         buildingService.deleteBuildingById(id);
 
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
-    @PostMapping
+    @PutMapping
     public ResponseEntity<Building> updateBuilding(Building updBuilding) {
 
         buildingService.updateBuilding(updBuilding);
