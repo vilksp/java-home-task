@@ -33,7 +33,7 @@ public class BuildingController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deleteBulding(@RequestParam Building building) {
+    public ResponseEntity<Void> deleteBuilding(@RequestBody Building building) {
 
         buildingService.deleteBuilding(building);
 
@@ -41,7 +41,7 @@ public class BuildingController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteBuldingById(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteBuildingById(@PathVariable Long id) {
 
         buildingService.deleteBuildingById(id);
 
