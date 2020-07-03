@@ -1,5 +1,6 @@
 package ksp.vilius.home.Vilius.Kasperavicius.Java.Home.Task.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class Address extends BaseEntity {
     private int number;
 
     @OneToOne(mappedBy = "address")
+    @JsonIgnore
     private Building building;
 
 

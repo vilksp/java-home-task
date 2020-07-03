@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Building extends BaseEntity {
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "adress_id", referencedColumnName = "id")
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     @OneToOne(cascade = CascadeType.ALL)
